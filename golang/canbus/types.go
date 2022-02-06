@@ -44,5 +44,5 @@ type SLOT struct {
 		Max    float32 `yaml:"max"`
 		Offset float32 `yaml:"offset"`
 		Size   string  `yaml:"size"`
-	} `yaml:"metadata"`
+	} `yaml:"spec"`
 }
