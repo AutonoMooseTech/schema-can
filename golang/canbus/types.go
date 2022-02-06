@@ -55,7 +55,7 @@ func (msg *Message) Validate() (err error) {
 		}
 	} else if msg.Spec.Id.J1939 != nil {
 		// priority within bounds
-		if *msg.Spec.Id.J1939.Priority > 3 {
+		if *msg.Spec.Id.J1939.Priority <= 0b111 {
 			err = errors.New("Priority is too high. Maximum is 3")
 		}
 
