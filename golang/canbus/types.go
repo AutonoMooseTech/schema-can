@@ -71,9 +71,26 @@ func (msg *Message) Validate() (err error) {
 type SLOT struct {
 	Object `yaml:",inline"`
 	Spec   struct {
-		Min    float32 `yaml:"min"`
-		Max    float32 `yaml:"max"`
-		Offset float32 `yaml:"offset"`
-		Size   string  `yaml:"size"`
+		Min    *float32 `yaml:"min"`
+		Max    *float32 `yaml:"max"`
+		Offset *float32 `yaml:"offset"`
+		Size   *string  `yaml:"size"`
+		Unit   *string  `yaml:"unit,omitempty"`
 	} `yaml:"spec"`
 }
+
+func (msg *SLOT) Validate() (err error) {
+	// Check identifier is valid
+	if msg.Spec.Min == nil {
+		return errors.New("Minimum value must be declared")
+	} else if msg.Spec.Max == nil {
+		return errors.New("Maximum value must be declared")
+	} else if msg.Spec.Offset == nil {
+		return errors.New("Maximum value must be declared")
+	} else if msg.Spec.Size == nil {
+		return errors.New("Size must be declared")
+	}
+
+	return err
+}
+
