@@ -1,7 +1,6 @@
 package schemacan
 
 import (
-	"github.com/AutonoMooseTech/canbus/golang/canbus"
 	"gopkg.in/yaml.v2"
 	"bytes"
 	"log"
@@ -16,18 +15,18 @@ func Unmarshal(in []byte) (err error, output []interface{}) {
 	for _, slice := range splitStream(in) {
 		log.Printf("Input slice: %q", slice)
 
-		var object canbus.Object
+		var object Object
 
 		yaml.Unmarshal(slice, &object);
 
 		switch object.Kind {
 		case "slot":
-			var slot canbus.SLOT
+			var slot SLOT
 			yaml.Unmarshal(slice, &slot)
 			slot.Validate()
 			output = append(output, &slot)
 		case "message":
-			var message canbus.Message
+			var message Message
 			yaml.Unmarshal(slice, &message)
 			message.Validate()
 			output = append(output, &message)
