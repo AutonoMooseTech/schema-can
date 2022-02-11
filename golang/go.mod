@@ -1,4 +1,4 @@
-module github.com/AutonoMooseTech/canbus/golang
+module github.com/AutonoMooseTech/schema-can/golang
 
 go 1.17
 
