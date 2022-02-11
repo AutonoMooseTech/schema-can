@@ -1,4 +1,4 @@
-package canbus
+package schemacan
 
 import (
 	"testing"

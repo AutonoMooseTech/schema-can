@@ -1,4 +1,4 @@
-package yaml
+package schemacan
 
 import (
 	"github.com/AutonoMooseTech/canbus/golang/canbus"
