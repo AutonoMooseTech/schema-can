@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="1000"
+   height="1000"
+   viewBox="0 0 264.58333 264.58334"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.1 (c3084ef, 2021-09-22)"
+   sodipodi:docname="logo.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     units="px"
+     inkscape:zoom="0.38323673"
+     inkscape:cx="683.65055"
+     inkscape:cy="361.39542"
+     inkscape:window-width="1940"
+     inkscape:window-height="1307"
+     inkscape:window-x="2350"
+     inkscape:window-y="1511"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="g3873"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:snap-intersection-paths="true" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g2249"
+       transform="translate(4.4586832,0.47210967)" />
+    <g
+       id="g3661"
+       transform="translate(-7.1771272,-8.2195746)">
+      <rect
+         style="fill:#111111;fill-opacity:1;stroke:none;stroke-width:17.6355;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+         id="rect4696"
+         width="238.125"
+         height="105.83334"
+         x="20.406294"
+         y="87.594566"
+         ry="13.229167" />
+      <g
+         id="g3873">
+        <rect
+           style="fill:#eec643;fill-opacity:1;stroke:none;stroke-width:29.7704;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+           id="rect2838-3-7"
+           width="90.77401"
+           height="40.065765"
+           x="146.04227"
+           y="-73.35759"
+           transform="matrix(0.86958523,0.49378288,0.506243,-0.86239088,0,0)" />
+        <rect
+           style="fill:#a63d40;fill-opacity:1;stroke:none;stroke-width:29.3255;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+           id="rect2838"
+           width="76.50692"
+           height="39.6875"
+           x="168.79517"
+           y="100.82374" />
+        <rect
+           style="fill:#a63d40;fill-opacity:1;stroke:none;stroke-width:29.3255;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+           id="rect2838-4"
+           width="76.50692"
+           height="39.6875"
+           x="33.635517"
+           y="140.51125" />
+        <rect
+           style="fill:#eec643;fill-opacity:1;stroke:none;stroke-width:29.3255;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+           id="rect2838-1"
+           width="76.50692"
+           height="39.6875"
+           x="168.79517"
+           y="140.51123" />
+        <rect
+           style="fill:#eec643;fill-opacity:1;stroke:none;stroke-width:29.3255;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+           id="rect2838-1-6"
+           width="76.50692"
+           height="39.6875"
+           x="33.635529"
+           y="100.82374" />
+        <rect
+           style="fill:#a63d40;fill-opacity:1;stroke:none;stroke-width:29.7704;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+           id="rect2838-3"
+           width="90.77401"
+           height="40.065765"
+           x="3.7618697"
+           y="171.0407"
+           transform="matrix(0.86958523,-0.49378288,0.506243,0.86239088,0,0)" />
+      </g>
+    </g>
+  </g>
+</svg>

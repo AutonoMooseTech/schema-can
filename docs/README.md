@@ -1,6 +1,7 @@
 ---
 home: true
 heroText: SchemaCAN
+heroImage: /images/logo.svg
 tagline: An Open CAN Bus Communication Schema
 features:
   - title: Breaking down barriers

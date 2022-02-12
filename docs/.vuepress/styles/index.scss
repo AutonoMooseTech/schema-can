@@ -1,0 +1,27 @@
+:root {
+	--c-brand: #EEC643;
+	--c-brand-light: #EEC643;
+
+	--c-bg: #F7F4F3;
+	--c-bg-light: #F7F4F3;
+	--c-bg-lighter: #F7F4F3;
+
+	--c-text: #111;
+	--c-text-light: #222;
+	--c-text-lighter: #333;
+	--c-text-lightest: #333;
+}
+
+html.dark {
+	--c-brand: #EEC643;
+	--c-brand-light: #EEC643;
+
+ 	--c-bg: #111;
+	--c-bg-light: #222;
+	--c-bg-lighter: #333;
+
+	--c-text: #F7F4F3;
+	--c-text-light: #F7F4F3;
+	--c-text-lighter: #F7F4F3;
+	--c-text-lightest: #F7F4F3;
+}
