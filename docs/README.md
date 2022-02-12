@@ -12,10 +12,10 @@ features:
     details: Instead of standards like J1939 being a hack that resides on top of the standard, SchemaCAN integrates J1939 into some of it's core design decisions.
 ---
 
-## Getting Started
+## Objectives
 
 Learn the basics of the specification and write your first message definitions here.
 
-## The Specification
+## Specification
 
-You can read the entire specification here.
+You can read the entire specification [here](./spec).
