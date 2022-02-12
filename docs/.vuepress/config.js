@@ -6,5 +6,22 @@ module.exports = {
 	base: '/schema-can/',
 
 	// theme
-	theme: '@vuepress/theme-default'
+	theme: '@vuepress/theme-default',
+
+	// plugins
+	plugins: [
+    [
+      '@vuepress/plugin-search',
+      {
+        locales: {
+          '/': {
+            placeholder: 'Search',
+          },
+          '/zh/': {
+            placeholder: '搜索',
+          },
+        },
+      },
+    ],
+  ],
 }
