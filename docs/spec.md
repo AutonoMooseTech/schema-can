@@ -15,6 +15,23 @@ These fields are present in every object and should be placed at the top of each
 
 ### Message
 
+
+#### Data Types
+
+Data types tell the associated tooling two things, the ammount of space occupied by the
+
+| Type | C Equivalent | Description             |
+|:-----|:-------------|:------------------------|
+| u8   | uint8_t      | 8-bit unsigned integer  |
+| i8   | int8_t       | 8-bit signed integer    |
+| u16  | uint16_t     | 16-bit unsigned integer |
+| i16  | int16_t      | 16-bit signed integer   |
+| u32  | uint32_t     | 32-bit unsigned integer |
+| i32  | int32_t      | 32-bit signed integer   |
+| u64  | uint64_t     | 64-bit unsigned integer |
+| i64  | int64_t      | 64-bit signed integer   |
+| uN   |              | N-bit unsigned integer  |
+| iN   |              | N-bit signed integer    |
 ::: details Example
 <CodeGroup>
   <CodeGroupItem title="YAML">
