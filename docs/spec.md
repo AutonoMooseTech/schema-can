@@ -38,6 +38,31 @@ Data types tell the associated tooling two things, the ammount of space occupied
 ::: warning Avoid the use of floats where possible
 Support for floating point numbers is for reasons of compatibility with existing systems. Generally it is regarded as best practice to avoid the use of floating point numbers as they are not space efficient.
 :::
+
+#### Arrays and Strings
+
+Arrays are fixed length collections of the same primitive type. They can be defined using the pattern `type[length]` and will occupy the number of bits equal to the product of the length of the type and the length of the array.
+
+<CodeGroup>
+  <CodeGroupItem title="YAML">
+
+```yaml
+- name: quadrants
+  type: u6[4]
+```
+
+  </CodeGroupItem>
+  <CodeGroupItem title="JSON">
+
+```json
+{
+	"name": "quadrants",
+	"type": "u6[4]"
+}
+```
+
+  </CodeGroupItem>
+</CodeGroup>
 <CodeGroup>
   <CodeGroupItem title="YAML">
 
