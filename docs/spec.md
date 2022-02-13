@@ -20,11 +20,9 @@ These fields are present in every object and should be placed at the top of each
 	- `namespace` - 
 	- `labels` - user-defined tags that can be used to add extra unstructured information to the object
 
-## Object Types
+## Message
 
-### Message
-
-#### Primitive Signal Types
+### Primitive Signal Types
 
 Data types tell the associated tooling two things, the ammount of space occupied by the
 
@@ -48,7 +46,7 @@ Data types tell the associated tooling two things, the ammount of space occupied
 Support for floating point numbers is for reasons of compatibility with existing systems. Generally it is regarded as best practice to avoid the use of floating point numbers as they are not space efficient.
 :::
 
-#### Arrays and Strings
+### Arrays and Strings
 
 Arrays are fixed length collections of the same primitive type. They can be defined using the pattern `type[length]` and will occupy the number of bits equal to the product of the length of the type and the length of the array.
 
@@ -73,7 +71,7 @@ Arrays are fixed length collections of the same primitive type. They can be defi
   </CodeGroupItem>
 </CodeGroup>
 
-##### Example Message
+#### Example Message
 <CodeGroup>
   <CodeGroupItem title="YAML">
 
