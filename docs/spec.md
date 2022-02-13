@@ -1,5 +1,14 @@
 # Specification
 
+## Concepts
+
+The idea is that a system of communication between two or more devices on a CAN Bus can be defined as a heirachy of objects which conform to a certain schema. This information can then be consumed by applications either on the bus or as part of external monitoring to allow them to understand the content of messages which would otherwise be nothing more than streams of bytes.
+
+At the lowest level there are signals, the actual pieces of data which are packed together to make up the data field of a message. These messages have attributes like length and identifier(s) which gives tooling all the information needed to identify a CAN frame and either decode or encode it's contents. Applications are the next level up and are a collection of commands (received by the controller) or broadcast (sent by the controller) messages which define the interface for that application.
+
+It's important to make the distinction that SchemaCAN is not a method of sending data over CAN Bus or otherwise. It meerly a way to ensure messages are encoded and decoded in a way that information is not lost. It can however be used as a tool to help bridge CAN Bus (including SocketCAN) to another communication protocol.
+
+
 ## Common Fields
 
 These fields are present in every object and should be placed at the top of each object definition
