@@ -144,7 +144,9 @@ spec:
 
 ### SLOT
 
-The scaling, limit, offset, transfer function is a concept that is brought forward by the SAE J1939 standard and it largely solves the problem of encoding and decoding between floating point and fixed point numbers. As well as being able to use custom SLOT definitions, SchemaCAN comes pre-packaged with the SLOTS defined in SAE J1939.
+SLOT stands for scaling, limit, offset and transfer function which is a concept from the [SAE J1939-71](https://www.sae.org/standards/content/j1939/71_202002/) standard to largely sove the problem of encoding and decofing between foatping point and fixed point numbers.
+
+A slot can either be defined on its own to be used by referend by a message or it can be defined in place in the message data field if it's not going to be needed anywhere else. If possible, it's a good idea to use the pre-defined SLOTs in the [J1939 Digital Annex](https://www.sae.org/standards/content/j1939da_202201/).
 
 #### Example SLOT
 <CodeGroup>
