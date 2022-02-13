@@ -20,9 +20,48 @@ These fields are present in every object and should be placed at the top of each
 	- `namespace` - Optional scope of the object. If not set, the namespace value is 'default'.
 	- `labels` - Optional key-value tags that can be used to add extra unstructured information to the object.
 
-## Message
+#### Example Common Field Definition
 
-### Primitive Signal Types
+<CodeGroup>
+  <CodeGroupItem title="YAML">
+
+```yaml
+version: v1
+kind: signal
+metadata:
+	name: gear-position
+	namespace: transmission
+	labels:
+		manual_revision: 1.3.0
+```
+
+  </CodeGroupItem>
+  <CodeGroupItem title="JSON">
+
+```json
+{
+	"version": "v1",
+	"kind": "signal",
+	"metadata": {
+		"name": "gear-position",
+		"namespace": "transmission",
+		"labels": {
+			"manual_revision": "1.3.0"
+		}
+	}
+}
+```
+
+  </CodeGroupItem>
+</CodeGroup>
+
+## Signals
+
+Signals should be seen at the atomic pieces of data, that is they cannot be subdevided any further and SchemaCAN tries to enforce this as much as possible by trying to facilitate all of the possible types of data even if they do not conform to best practices.
+
+There are two types of signals: primitive and SLOTs. Primitive signals do not provide any information about how the data is to be interpreted in the real world. They are either purely analogous to their type or it is not possible to represent them using SLOTs. SLOTs on the other hand is a way of letting both system and humans understand the meaning of the signal in real world terms by allowing predictive encoding and decoding of information.
+
+### Primitive
 
 Data types tell the associated tooling two things, the ammount of space occupied by the
 
@@ -46,7 +85,7 @@ Data types tell the associated tooling two things, the ammount of space occupied
 Support for floating point numbers is for reasons of compatibility with existing systems. Generally it is regarded as best practice to avoid the use of floating point numbers as they are not space efficient.
 :::
 
-### Arrays and Strings
+#### Arrays and Strings
 
 Arrays are fixed length collections of the same primitive type. They can be defined using the pattern `type[length]` and will occupy the number of bits equal to the product of the length of the type and the length of the array.
 
@@ -70,6 +109,58 @@ Arrays are fixed length collections of the same primitive type. They can be defi
 
   </CodeGroupItem>
 </CodeGroup>
+
+### SLOTs
+
+SLOT stands for scaling, limit, offset and transfer function which is a concept from the [SAE J1939-71](https://www.sae.org/standards/content/j1939/71_202002/) standard to largely sove the problem of encoding and decofing between foatping point and fixed point numbers.
+
+A slot can either be defined on its own to be used by referend by a message or it can be defined in place in the message data field if it's not going to be needed anywhere else. If possible, it's a good idea to use the pre-defined SLOTs in the [J1939 Digital Annex](https://www.sae.org/standards/content/j1939da_202201/).
+
+#### Example SLOT
+<CodeGroup>
+  <CodeGroupItem title="YAML">
+
+```yaml
+version: v1
+kind: slot
+metadata:
+  name: sae-ev-06
+  namespace: j1939
+spec:
+  limits:
+  	min: 0
+  	max: 64.255 # in units
+  size: 16 # in bits
+  unit: V
+```
+
+  </CodeGroupItem>
+  <CodeGroupItem title="JSON">
+
+```json
+{
+	"version": "v1",
+	"kind": "slot",
+	"metadata": {
+		"name": "sae-ev-06",
+		"namespace": "my-battery"
+	},
+	"spec": {
+		"scale": 0.001,
+		"limits": {
+			"min": 0,
+			"max": 64.255
+		},
+		"size": 16,
+		"unit": "V"
+	}
+}
+```
+
+  </CodeGroupItem>
+</CodeGroup>
+
+## Messages
 
 #### Example Message
 <CodeGroup>
@@ -140,52 +231,4 @@ spec:
 </CodeGroup>
 
 
-### SLOT
 
-SLOT stands for scaling, limit, offset and transfer function which is a concept from the [SAE J1939-71](https://www.sae.org/standards/content/j1939/71_202002/) standard to largely sove the problem of encoding and decofing between foatping point and fixed point numbers.
-
-A slot can either be defined on its own to be used by referend by a message or it can be defined in place in the message data field if it's not going to be needed anywhere else. If possible, it's a good idea to use the pre-defined SLOTs in the [J1939 Digital Annex](https://www.sae.org/standards/content/j1939da_202201/).
-
-#### Example SLOT
-<CodeGroup>
-  <CodeGroupItem title="YAML">
-
-```yaml
-version: v1
-kind: slot
-metadata:
-  name: sae-ev-06
-  namespace: j1939
-spec:
-  limits:
-  	min: 0
-  	max: 64.255 # in units
-  size: 16 # in bits
-  unit: V
-```
-
-  </CodeGroupItem>
-  <CodeGroupItem title="JSON">
-
-```json
-{
-	"version": "v1",
-	"kind": "slot",
-	"metadata": {
-		"name": "sae-ev-06",
-		"namespace": "my-battery"
-	},
-	"spec": {
-		"scale": 0.001,
-		"limits": {
-			"min": 0,
-			"max": 64.255
-		},
-		"size": 16,
-		"unit": "V"
-	}
-}
-```
-
-  </CodeGroupItem>
-</CodeGroup>
