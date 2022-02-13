@@ -13,12 +13,12 @@ It's important to make the distinction that SchemaCAN is not a method of sending
 
 These fields are present in every object and should be placed at the top of each object definition
 
-- `version` Object schema version
-- `kind` Object type
+- `version` Schema version to allow tooling to recognise.
+- `kind` What _kind_ of object is being declared.
 - `metadata`
-	- `name` - 
-	- `namespace` - 
-	- `labels` - user-defined tags that can be used to add extra unstructured information to the object
+	- `name` - Descriptive name to identify the object which must be inique withing it's type and namespace.
+	- `namespace` - Optional scope of the object. If not set, the namespace value is 'default'.
+	- `labels` - Optional key-value tags that can be used to add extra unstructured information to the object.
 
 ## Message
 
