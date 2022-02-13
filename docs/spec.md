@@ -15,24 +15,29 @@ These fields are present in every object and should be placed at the top of each
 
 ### Message
 
-
-#### Data Types
+#### Primitive Signal Types
 
 Data types tell the associated tooling two things, the ammount of space occupied by the
 
-| Type | C Equivalent | Description             |
-|:-----|:-------------|:------------------------|
-| u8   | uint8_t      | 8-bit unsigned integer  |
-| i8   | int8_t       | 8-bit signed integer    |
-| u16  | uint16_t     | 16-bit unsigned integer |
-| i16  | int16_t      | 16-bit signed integer   |
-| u32  | uint32_t     | 32-bit unsigned integer |
-| i32  | int32_t      | 32-bit signed integer   |
-| u64  | uint64_t     | 64-bit unsigned integer |
-| i64  | int64_t      | 64-bit signed integer   |
-| uN   |              | N-bit unsigned integer  |
-| iN   |              | N-bit signed integer    |
-::: details Example
+| Type | C Equivalent | Description                                    |
+|:-----|:-------------|:-----------------------------------------------|
+| u8   | uint8_t      | 8-bit unsigned integer                         |
+| i8   | int8_t       | 8-bit signed integer                           |
+| u16  | uint16_t     | 16-bit unsigned integer                        |
+| i16  | int16_t      | 16-bit signed integer                          |
+| u32  | uint32_t     | 32-bit unsigned integer                        |
+| i32  | int32_t      | 32-bit signed integer                          |
+| u64  | uint64_t     | 64-bit unsigned integer                        |
+| i64  | int64_t      | 64-bit signed integer                          |
+| uN   |              | N-bit unsigned integer                         |
+| iN   |              | N-bit signed integer                           |
+| f16  | _Float16     | 16-bit floating point (IEEE-754-2008 binary16) |
+| f32  | float        | 32-bit floating point (IEEE-754-2008 binary32) |
+| f64  | double       | 64-bit floating point (IEEE-754-2008 binary64) |
+
+::: warning Avoid the use of floats where possible
+Support for floating point numbers is for reasons of compatibility with existing systems. Generally it is regarded as best practice to avoid the use of floating point numbers as they are not space efficient.
+:::
 <CodeGroup>
   <CodeGroupItem title="YAML">
 
