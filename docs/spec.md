@@ -16,9 +16,9 @@ These fields are present in every object and should be placed at the top of each
 - `version` Schema version to allow tooling to recognise.
 - `kind` What _kind_ of object is being declared.
 - `metadata`
-	- `name` - Descriptive name to identify the object which must be inique withing it's type and namespace.
-	- `namespace` - Optional scope of the object. If not set, the namespace value is 'default'.
-	- `labels` - Optional key-value tags that can be used to add extra unstructured information to the object.
+  - `name` - Descriptive name to identify the object which must be inique withing it's type and namespace.
+  - `namespace` - Optional scope of the object. If not set, the namespace value is 'default'.
+  - `labels` - Optional key-value tags that can be used to add extra unstructured information to the object.
 
 #### Example Common Field Definition
 
@@ -29,10 +29,10 @@ These fields are present in every object and should be placed at the top of each
 version: v1
 kind: signal
 metadata:
-	name: gear-position
-	namespace: transmission
-	labels:
-		manual_revision: 1.3.0
+  name: gear-position
+  namespace: transmission
+  labels:
+    manual_revision: 1.3.0
 ```
 
   </CodeGroupItem>
@@ -40,15 +40,15 @@ metadata:
 
 ```json
 {
-	"version": "v1",
-	"kind": "signal",
-	"metadata": {
-		"name": "gear-position",
-		"namespace": "transmission",
-		"labels": {
-			"manual_revision": "1.3.0"
-		}
-	}
+  "version": "v1",
+  "kind": "signal",
+  "metadata": {
+    "name": "gear-position",
+    "namespace": "transmission",
+    "labels": {
+      "manual_revision": "1.3.0"
+    }
+  }
 }
 ```
 
@@ -102,8 +102,8 @@ Arrays are fixed length collections of the same primitive type. They can be defi
 
 ```json
 {
-	"name": "quadrants",
-	"type": "u6[4]"
+  "name": "quadrants",
+  "type": "u6[4]"
 }
 ```
 
@@ -127,9 +127,8 @@ metadata:
   name: sae-ev-06
   namespace: j1939
 spec:
-  limits:
-  	min: 0
-  	max: 64.255 # in units
+  min: 0
+  max: 64.255 # in units
   size: 16 # in bits
   unit: V
 ```
@@ -139,21 +138,19 @@ spec:
 
 ```json
 {
-	"version": "v1",
-	"kind": "slot",
-	"metadata": {
-		"name": "sae-ev-06",
-		"namespace": "my-battery"
-	},
-	"spec": {
-		"scale": 0.001,
-		"limits": {
-			"min": 0,
-			"max": 64.255
-		},
-		"size": 16,
-		"unit": "V"
-	}
+  "version": "v1",
+  "kind": "slot",
+  "metadata": {
+    "name": "sae-ev-06",
+    "namespace": "my-battery"
+  },
+  "spec": {
+    "scale": 0.001,
+    "min": 0,
+    "max": 64.255,
+    "size": 16,
+    "unit": "V"
+  }
 }
 ```
 
@@ -193,37 +190,37 @@ spec:
 
 ```json
 {
-	"version": "v1",
-	"kind": "message",
-	"metadata": {
-		"name": "controller-status",
-		"namespace": "my-battery"
-	},
-	"spec": {
-		"id": {
-			"extended": "0x555"
-		},
-		"data": [
-			{
-				"name": "enabled",
-				"description": "set when the battery is turned on",
-				"size": "bool"
-			},
-			{
-				"name": "voltage-ok",
-				"description": "voltage is within pre-defined limits",
-				"size": "bool"
-			},
-			{
-				"padding": 6
-			},
-			{
-				"name": "voltage",
-				"description": "total battery voltage",
-				"slot": "sae-ev-06"
-			}
-		]
-	}
+  "version": "v1",
+  "kind": "message",
+  "metadata": {
+    "name": "controller-status",
+    "namespace": "my-battery"
+  },
+  "spec": {
+    "id": {
+      "extended": "0x555"
+    },
+    "data": [
+      {
+        "name": "enabled",
+        "description": "set when the battery is turned on",
+        "size": "bool"
+      },
+      {
+        "name": "voltage-ok",
+        "description": "voltage is within pre-defined limits",
+        "size": "bool"
+      },
+      {
+        "padding": 6
+      },
+      {
+        "name": "voltage",
+        "description": "total battery voltage",
+        "slot": "sae-ev-06"
+      }
+    ]
+  }
 }
 ```
 
