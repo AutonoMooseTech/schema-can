@@ -31,12 +31,12 @@ type Message struct {
 				SourceAddress    *uint8 `yaml:"source_address,omitempty"`
 			} `yaml:"j1939,omitempty"`
 		} `yaml:"id"`
-		Length uint8 `yaml:"length"`
+		Length *uint8 `yaml:"length"`
 		Data   []struct {
 			Name          string `yaml:"name,omitempty"`
 			Size          string `yaml:"size,omitempty"`
 			SLOTReference string `yaml:"slot,omitempty"`
-			Padding       uint8  `yaml:"padding,omitempty"`
+			Padding       *uint8  `yaml:"padding,omitempty"`
 		} `yaml:"data" json:"data"`
 	} `yaml:"spec"`
 }
