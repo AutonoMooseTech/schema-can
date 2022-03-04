@@ -3,7 +3,6 @@ package schemacan
 import (
 	"gopkg.in/yaml.v2"
 	"bytes"
-	"log"
 	"fmt"
 )
 
@@ -13,8 +12,6 @@ func splitStream(in []byte) (out [][]byte) {
 
 func Unmarshal(in []byte) (err error, output []interface{}) {
 	for _, slice := range splitStream(in) {
-		log.Printf("Input slice: %q", slice)
-
 		var object Object
 
 		yaml.Unmarshal(slice, &object);
